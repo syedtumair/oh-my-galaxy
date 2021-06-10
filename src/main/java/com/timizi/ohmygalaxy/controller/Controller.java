@@ -19,9 +19,9 @@ public class Controller {
     private NasaMarsWeatherApiService marsWeatherService;
 
     @GetMapping("v1.0/omg/planets/mars/temp/now")
-    private ResponseEntity<?> getMarsTempData(@RequestBody MarsTempDataRequest request , @RequestHeader (value = "Authorization" , required = true ) String authToken ) {
-        log.info("request received at mars temp module {}", request);
-        return marsWeatherService.getMarsTempDataDirectly(request);
+    private ResponseEntity<?> getMarsTempData(@RequestHeader (value = "Authorization" , required = true ) String authToken ) {
+        log.info("request received at mars temp module");
+        return marsWeatherService.getMarsTempDataDirectly();
     }
 
 
